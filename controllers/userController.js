@@ -32,7 +32,7 @@ exports.register = async (req, res) => {
       expiresIn: "1day",
     });
 
-    const link = `https://vegefoods-freshpick-app.vercel.app/verify-email/${token}`;
+    const link = `${req.protocol}://${req.get('host')}/api/v1/verify/${token}`;
     // const link = `http://localhost:5173/verify-email/${token}`
 
     const firstName = user.fullName.split(" ")[0];
@@ -220,7 +220,7 @@ exports.forgotPassword = async (req, res) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1min",
     });
-    const link = `https://vegefoods-freshpick-app.vercel.app/reset-password/${token}`; //consumed link from frontend
+    const link = `${req.protocol}://${req.get('host')}/api/v1/resetpassword/${token}`; //consumed link from frontend
     const firstName = user.fullName.split(" ")[0];
 
     const mailDetails = {

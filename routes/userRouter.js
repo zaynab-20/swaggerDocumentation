@@ -17,19 +17,19 @@ const router = require('express').Router();
  *               fullName: 
  *                 type: string
  *                 description: this is the fullName of the user
- *                 example: Joy Pabs
+ *                 example: zainab atoloye
  *               email: 
  *                 type: string
  *                 description: this is the email of the user
- *                 example: joypabs@gmail.com
- *               gender: 
+ *                 example: zatoloye@gmail.com
+ *               username: 
  *                 type: string
- *                 description: this is the gender of the user
- *                 example: Female
+ *                 description: this is the username of the user
+ *                 example: zaynab
  *               password: 
  *                 type: string
  *                 description: this is the password of the user. must contain uppercase, lowercase and a special character
- *                 example: Joyp$
+ *                 example: zaynab02
  *     responses: 
  *       201:
  *         description: user registered successfully
@@ -41,19 +41,19 @@ const router = require('express').Router();
  *                 fullName: 
  *                   type: string
  *                   description: this is the fullName of the user
- *                   example: Joy Pabs
+ *                   example: zainab atoloye
  *                 email: 
  *                   type: string
  *                   description: this is the email of the user
- *                   example: joypabs@gmail.com
- *                 gender: 
+ *                   example: zatoloye@gmail.com
+ *                 username: 
  *                   type: string
- *                   description: this is the gender of the user
- *                   example: Female
+ *                   description: this is the username of the user
+ *                   example: zaynab
  *                 password: 
  *                   type: string
  *                   description: this is the password of the user. must contain uppercase, lowercase and a special character
- *                   example: Joyp$
+ *                   example: zaynab02
  *       400:
  *         description: user with this email already exists
  *         content:
@@ -64,7 +64,7 @@ const router = require('express').Router();
  *                 email: 
  *                   type: string
  *                   description: this is when you use a duplicate email
- *                   example: joypabs@gmail.com
+ *                   example: zatoloye@gmail.com
  *       500:
  *         description: error registering user
  *         content:
@@ -140,7 +140,7 @@ router.post('/resendverificationemail', resendVerificationEmail);
  *               email: 
  *                 type: string
  *                 description: User's email
- *                 example: joypabs@gmail.com
+ *                 example: zatoloye@gmail.com
  *     responses:
  *       200:
  *         description: Password reset link sent successfully
@@ -172,11 +172,11 @@ router.post('/forgotpassword', forgotPassword);
  *               password: 
  *                 type: string
  *                 description: New password
- *                 example: NewPassword$123
+ *                 example: atoloye30
  *               confirmPassword: 
  *                 type: string
  *                 description: Confirm new password
- *                 example: NewPassword$123
+ *                 example: atoloye30
  *     responses:
  *       200:
  *         description: Password reset successfully
@@ -203,11 +203,11 @@ router.post('/resetpassword/:token', resetPassword);
  *               email: 
  *                 type: string
  *                 description: User's email
- *                 example: joypabs@gmail.com
+ *                 example: zatoloye@gmail.com
  *               password: 
  *                 type: string
  *                 description: User's password
- *                 example: Joyp$
+ *                 example: zaynab02
  *     responses:
  *       200:
  *         description: User logged in successfully
@@ -258,18 +258,10 @@ router.get('/getOneUser/:id', getOneUser)
  *           schema: 
  *             type: object
  *             properties: 
- *               fullName: 
+ *               username: 
  *                 type: string
- *                 description: User's full name
- *                 example: Joy Pabs
- *               email: 
- *                 type: string
- *                 description: User's email
- *                 example: joypabs@gmail.com
- *               gender: 
- *                 type: string
- *                 description: User's gender
- *                 example: Female
+ *                 description: User's username
+ *                 example: zainab
  *     responses:
  *       200:
  *         description: User updated successfully
